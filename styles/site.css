@@ -7,11 +7,21 @@
   --text: #111827;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 body {
+  margin: 0;
   font-family: 'Roboto', sans-serif;
   background-color: var(--bg);
   color: var(--text);
   line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 /* ===== HEADER ===== */
@@ -26,7 +36,6 @@ header {
 
 header img {
   width: 45px;
-  height: auto;
   border-radius: 8px;
 }
 
@@ -44,33 +53,35 @@ header span {
 }
 
 /* ===== NAVIGATION ===== */
-nav {
+#main-nav {
   background: #111827;
   display: none;
 }
 
-nav ul {
+#main-nav ul {
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-nav li {
+#main-nav li {
   border-bottom: 1px solid #1f2933;
 }
 
-nav a {
+#main-nav a {
   display: block;
   padding: 1rem;
   color: white;
   text-decoration: none;
 }
 
-nav a:hover,
-nav a.active {
+#main-nav a:hover,
+#main-nav a.active {
   background: var(--secondary);
 }
 
-/* JS will toggle this */
-nav.open {
+/* JS toggle */
+#main-nav.open {
   display: block;
 }
 
@@ -99,7 +110,6 @@ section h2 {
 
 /* ===== ABOUT SECTION ===== */
 #about img {
-  width: 100%;
   max-width: 200px;
   display: block;
   margin: 0.5rem auto;
@@ -124,8 +134,10 @@ section h2 {
   cursor: pointer;
 }
 
-.filters button:hover {
+.filters button:hover,
+.filters button:focus {
   background: #1d4ed8;
+  outline: none;
 }
 
 #course-list {
@@ -133,11 +145,17 @@ section h2 {
   gap: 0.75rem;
 }
 
-.course {
-  padding: 0.75rem;
+/* COURSE CARDS */
+.course-card {
+  padding: 1rem;
   background: #f3f4f6;
   border-left: 5px solid var(--secondary);
   border-radius: 6px;
+}
+
+.completed {
+  background-color: #e6ffe6;
+  border-left: 5px solid green;
 }
 
 .credits {
@@ -148,6 +166,7 @@ section h2 {
 /* ===== RESOURCES ===== */
 #resources ul {
   list-style: none;
+  padding: 0;
 }
 
 #resources li {
